@@ -132,6 +132,13 @@ PRODUCT_PACKAGES += \
     SoundRecorder \
     Screencast
 
+#
+# Weather Provider Services;
+# uncomment to include in ROM build
+#PRODUCT_PACKAGES += OpenWeatherMapProvider 
+#PRODUCT_PACKAGES += WundergroundWeatherProvider
+#
+
 # Exchange support
 PRODUCT_PACKAGES += \
     Exchange2
