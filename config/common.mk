@@ -1,3 +1,14 @@
+# microG packages
+PRODUCT_PACKAGES += \
+    GmsCore \
+    GsfProxy \
+    FakeStore \
+    FDroid \
+    FDroidPrivilegedExtension \
+    MozillaNlpBackend \
+    NominatimNlpBackend \
+    com.google.android.maps.jar
+
 PRODUCT_BRAND ?= cyanogenmod
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
@@ -247,11 +258,6 @@ ifndef CM_BUILDTYPE
         RELEASE_TYPE := $(shell echo $(RELEASE_TYPE) | sed -e 's|^CM_||g')
         CM_BUILDTYPE := $(RELEASE_TYPE)
     endif
-endif
-
-# Filter out random types, so it'll reset to UNOFFICIAL
-ifeq ($(filter RELEASE NIGHTLY SNAPSHOT EXPERIMENTAL,$(CM_BUILDTYPE)),)
-    CM_BUILDTYPE :=
 endif
 
 ifdef CM_BUILDTYPE
