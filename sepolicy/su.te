@@ -59,6 +59,12 @@ userdebug_or_eng(`
   allow untrusted_app superuser_device:dir { r_dir_perms };
   allow untrusted_app superuser_device:sock_file { write };
 
+  # CMFileManager has been located to netmonitor domain to allow browsing /proc/net
+  # To allow the root mode for CMFileManager, we need to copy above rules f. netmonitor
+  allow netmonitor su_exec:file { execute_no_trans getattr open read execute };
+  allow netmonitor sudaemon:unix_stream_socket { connectto read write setopt ioctl };
+  allow netmonitor superuser_device:dir { r_dir_perms };
+  allow netmonitor superuser_device:sock_file { write };
 
   # For Settings control of access
   allow system_app superuser_device:sock_file { read write create setattr unlink getattr };

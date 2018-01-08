@@ -9,6 +9,10 @@ PRODUCT_PACKAGES += \
     NominatimNlpBackend \
     com.google.android.maps.jar
 
+# Privacy-friendly Netmonitor
+PRODUCT_PACKAGES += \
+    privacy-friendly-netmonitor
+
 PRODUCT_BRAND ?= cyanogenmod
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
